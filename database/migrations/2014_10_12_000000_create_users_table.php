@@ -15,13 +15,13 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('first_name');
+            $table->string('first_name');
             $table->string('last_name');
-            $table->integer('identification')->index();
+            $table->string('identification')->index();
             $table->string('email')->index();
             $table->string('password');
-			$table->boolean('is_admin')->default(0);
-			$table->boolean('is_banned')->default(0);
+            $table->boolean('is_admin')->default(0);
+            $table->boolean('is_banned')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    
     public function down()
     {
         Schema::dropIfExists('users');

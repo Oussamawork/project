@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 use App\User;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisterController extends Controller
 {
@@ -74,7 +75,7 @@ class RegisterController extends Controller
                                    'email' => $request['email'],
                                    'password' => Hash::make($request['password'])
                         ]);
-        } else {
+        } else {    
             User::Where('identification', $request['identification'])
                         ->update(['first_name' => $request['firstname'],
                                   'last_name' => $request['lastname'],
@@ -83,9 +84,8 @@ class RegisterController extends Controller
                                   'is_admin' => 1
                         ]);
         }
-        return redirect()->route('first.index');
+        return view('auth.login');
     }
-
     /**
      * Update the specified resource in storage.
      *
