@@ -27,6 +27,18 @@ Route::post('register1', [
     'middleware' => 'guest'
 ]);
 
+Route::get('identificationP', [
+    'uses' => 'IdentificationController@getviewP',
+    'as' => 'identificationP',
+    'middleware' => 'guest'
+]);
+
+Route::post('register2', [
+    'uses' => 'IdentificationController@getIdentificationP',
+    'as' => 'verificationP',
+    'middleware' => 'guest'
+]);
+
 Route::post('edit', [
     'uses' => 'RegisterController@edit',
     'as' => 'edit'

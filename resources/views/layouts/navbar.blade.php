@@ -10,25 +10,32 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
-                        <ul>
-                            @if(!Auth::check())
-                                <li><a href="{{ url('/login') }}">login</a></li>
-                                <li><a href=" {{ route('identification') }} ">signup</a></li>
-                            @endif
-                            @if(Auth::check())
-                                <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                            onclick="event.preventDefault();
-                                                                            document.getElementById('logout-form').submit();">
-                                                                {{ __('Logout') }}
-                                        </a>
+                        <div class="main-menu">
+                            <ul>
+                                @if(!Auth::check())
+                                    <li><a href="{{ url('/login') }}">login</a></li>
+                                    <li><a href=" {{ route('identification') }} ">signup</a>
+                                        <ul>
+                                                <li><a href="{{ route('identification') }}">Students</a></li>
+                                                <li><a href=" {{ route('identificationP') }} ">Professors</a></li>
+                                        </ul>
+                                    </li>
+                                @endif
+                                @if(Auth::check())
+                                    <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                onclick="event.preventDefault();
+                                                                                document.getElementById('logout-form').submit();">
+                                                                    {{ __('Logout') }}
+                                            </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                </li>
-                            @endif
-                        </ul>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

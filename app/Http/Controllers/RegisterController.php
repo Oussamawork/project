@@ -67,13 +67,22 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed'
         ]);
-
-        User::Where('identification', $request['identification'])
-                    ->update(['first_name' => $request['firstname'],
-                    'last_name' => $request['lastname'],
-                    'email' => $request['email'],
-                    'password' => Hash::make($request['password'])
-                    ]);
+        if ($request['is_admin'] == null) {
+            User::Where('identification', $request['identification'])
+                        ->update(['first_name' => $request['firstname'],
+                                   'last_name' => $request['lastname'],
+                                   'email' => $request['email'],
+                                   'password' => Hash::make($request['password'])
+                        ]);
+        } else {
+            User::Where('identification', $request['identification'])
+                        ->update(['first_name' => $request['firstname'],
+                                  'last_name' => $request['lastname'],
+                                  'email' => $request['email'],
+                                  'password' => Hash::make($request['password']),
+                                  'is_admin' => 1
+                        ]);
+        }
         return redirect()->route('first.index');
     }
 

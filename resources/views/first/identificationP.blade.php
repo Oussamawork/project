@@ -21,10 +21,10 @@
                                 @endif
                                 <div class="login-text">
                                     <h2>Sign up</h2>
-                                    <span>Please sign up using your CNE.</span>
+                                    <span>Please sign up using your CNI.</span>
                                 </div>
                                 <div class="login-form text-center">
-                                    <form action="{{ route('verification') }}" method="post">
+                                    <form action="{{ route('verificationP') }}" method="post">
                                         @csrf
                                         <div class="col-md-12">
                                             <input type="text" id="identification" name="identification" value="{{ Session('identification') ? Session('identification') : old('identification') }}" placeholder="Identification">                                        

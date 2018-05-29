@@ -82,6 +82,9 @@
                         {{-- Sending identification --}}
                         <input id="identification" type="text" name="identification" value={{ $identification }} >
 
+                        {{-- is_admin or not --}}
+                        <input id="is_admin" type="text" name="is_admin" value={{ $is_admin ?? null }} >
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
