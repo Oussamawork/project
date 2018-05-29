@@ -1,0 +1,17 @@
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">	
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>A changer</h2> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<!-- Banner Area End -->
