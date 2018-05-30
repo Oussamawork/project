@@ -9,7 +9,7 @@ class IdentificationController extends Controller
     // Students 
     public function getview() 
     {
-        return view('first.identification');
+        return view('first.identification', ['message' => 'Sign up']);
     }
 
     public function getIdentification(Request $request) 

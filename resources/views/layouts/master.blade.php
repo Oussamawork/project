@@ -30,13 +30,13 @@
     </head>
 
     <body>
-        @include ('layouts.navbar')
+        @include ('partials.navbar')
 
         @include ('partials.banner')
         
         @yield ('content')
 
-        @include ('layouts.footer')
+        @include ('partials.footer')
 
         <script src="js/vendor/jquery-1.12.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

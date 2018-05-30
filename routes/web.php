@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('first.index');
+    return view('admin.index', ['message' => 'Home']);
 })->name('first.index');
 
 Route::get('identification', [
@@ -44,6 +44,19 @@ Route::post('edit', [
     'as' => 'edit'
 ]);
 
+Route::group(['prefix' => 'admin'], function() {
+
+    /* Route::get('create', [
+        'uses' => 'PostController@getAdminCreate',
+        'as' => 'admin.create'
+    ]); */
+
+    Route::get('Liste-Courses',[
+        'uses' => 'PostController@getview',
+        'as' => 'admin.listecourses'
+    ]);
+
+});
 
 Auth::routes();
 

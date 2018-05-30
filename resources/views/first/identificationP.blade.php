@@ -27,7 +27,7 @@
                                     <form action="{{ route('verificationP') }}" method="post">
                                         @csrf
                                         <div class="col-md-12">
-                                            <input type="text" id="identification" name="identification" value="{{ Session('identification') ? Session('identification') : old('identification') }}" placeholder="Identification">                                        
+                                            <input type="text" id="identification" name="identification" value="{{ Session('identification') ? Session('identification') : old('identification') }}" placeholder="CNI">                                        
                                                 @if ($errors->has('identification'))
                                                     <span class="invalid-feedback">
                                                         <h4>{{ $errors->first('identification') }}</h4>

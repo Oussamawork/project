@@ -4,9 +4,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                    <div class="header-top-left">
-                        <p>HAVE ANY QUESTION ?  +880 5698  598  6587</p>
-                    </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
@@ -41,12 +38,13 @@
             </div>
         </div>
     </div>
+    @if(Auth::check())
     <div class="header-area two header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <div class="logo">
-                        <a href="index.html"><img src="img/logo/logo2.png" alt="eduhome" /></a>
+                        <a href="index.html"><img src="{{ asset('img/logo/logo2.png') }}" alt="eduhome" /></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-6">
@@ -98,26 +96,8 @@
                                 </ul>
                             </nav>
                         </div>
-                        <!--Search Form Start-->
-                        <div class="search-btn">
-                            <ul data-toggle="dropdown" class="header-search search-toggle">
-                                <li class="search-menu">
-                                    <i class="fa fa-search"></i>
-                                </li>
-                            </ul>
-                            <div class="search">
-                                <div class="search-form">
-                                    <form id="search-form" action="#">
-                                        <input type="search" placeholder="Search here..." name="search" />
-                                        <button type="submit">
-                                            <span><i class="fa fa-search"></i></span>
-                                        </button>
-                                    </form>                                
-                                </div>
-                            </div>
-                        </div>	
-                        <!--End of Search Form-->
                         <!-- Main Menu End -->
+                        
                     </div>
                 </div>
                 <div class="col-xs-12">
@@ -126,5 +106,6 @@
             </div>
         </div>
     </div>
+@endif
 </header>
 <!-- Header Area End -->
